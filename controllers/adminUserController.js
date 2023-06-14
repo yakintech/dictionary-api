@@ -1,3 +1,4 @@
+const { logger } = require("../config/logger")
 const { AdminUser } = require("../models/AdminUser")
 
 const adminUserController = {
@@ -30,14 +31,17 @@ const adminUserController = {
     delete: (req, res) => {
 
         let id = req.params.id;
-
+        
         AdminUser.findByIdAndDelete(id)
             .then(data => {
                 res.json(data)
+                logger.log('info', 'Admin User Delete', { message: 'admin user deleted.. Id: ' + id });
             })
             .catch(err => {
                 res.json(err)
             })
+
+            
     }
 }
 
