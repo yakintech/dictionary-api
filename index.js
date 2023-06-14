@@ -10,6 +10,6 @@ db.connect();
 app.use('/api/adminusers', adminUserRoutes)
 
 
-app.listen(3000, () => {
+app.listen(8080, () => {
     console.log('Server is running...');
 })
