@@ -48,3 +48,7 @@ const adminUserController = {
 module.exports = {
     adminUserController
 }
+
+
+
+//register, login, forgot password
