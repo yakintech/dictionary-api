@@ -12,6 +12,7 @@ const cors = require('cors')
 
 
 const { adminUserRoutes } = require('./routes/adminUserRoute');
+const { webUserRoutes } = require('./routes/webUserRoute');
 
 require('dotenv').config()
 app.use(express.json())
@@ -39,6 +40,7 @@ io.on("connection", (socket) => {
 });
 
 app.use('/api/adminusers', adminUserRoutes)
+app.use('/api/webuser', webUserRoutes)
 
 
 httpServer.listen(3000);
